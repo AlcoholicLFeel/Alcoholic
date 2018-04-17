@@ -1,6 +1,6 @@
 cc=g++
 target=leaf
-sub_dir=src
+sub_dir=src src/sudu
 top_dir=$(shell pwd)
 obj_dir=$(top_dir)/obj
 cflags=-Wall
@@ -17,10 +17,9 @@ $(sub_dir):echo
 	make -C $@
 echo:
 	@echo $(sub_dir)
-	@echo begin compile
 
-$(target):$(obj_dir)/main.o
-	$(cc) $(cflags) -o $@ $^
+$(target):
+	$(cc) $(cflags) $(obj_dir)/*.o -o $@
 
 .PHONY:clean
 clean:

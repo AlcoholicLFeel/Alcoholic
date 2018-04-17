@@ -1,6 +1,8 @@
 #include <main.h>
+#include <sudu/RectBlock.h>
 
 int main(int argc,char **argv)
 {
-    cout<<"hello world"<<endl; 
+    RectBlock a;
+    a.Print();
 }

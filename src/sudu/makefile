@@ -5,7 +5,7 @@ objs=$(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(dir)))
 all:$(objs) move
 
 $(objs):%.o:%.cpp
-	$(cc) $(inc) $(cflags) -c $^ -o $@
+	$(cc) -c $(inc) $(cflags) $< -o $@
 
 move:
 	mv $(objs) $(obj_dir)
