@@ -1,16 +1,16 @@
 #ifndef SUDU_BASEBLOCK_H
 #define SUDU_BASEBLOCK_H
-#include <main.h>
-#include <list>
+#include <sudu_main.h>
 
 class BaseBlock
 {
     public:
-        BaseBlock();
+        BaseBlock(int Pos);
         ~BaseBlock();
-        void Print();
-        void AddMember(list<int> Member);
+        virtual void print();
+        void addMember(list<int> Member);
     protected:
+        int nPos;
     private:
         
 };

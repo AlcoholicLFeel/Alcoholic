@@ -1,9 +1,9 @@
 cc=g++
 target=leaf
-sub_dir=src src/sudu
+sub_dir=src src/sudu src/log
 top_dir=$(shell pwd)
 obj_dir=$(top_dir)/obj
-cflags=-Wall
+cflags=-Wall -std=c++11
 inc=-I$(top_dir)/inc
 export cc obj_dir cflags inc
 
@@ -23,4 +23,4 @@ $(target):
 
 .PHONY:clean
 clean:
-	rm -rf $(obj_dir)
+	rm -rf leaf  $(obj_dir)

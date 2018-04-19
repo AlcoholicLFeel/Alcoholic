@@ -1,14 +1,16 @@
 #include <sudu/BaseBlock.h>
+#include <log/logi.h>
 
-BaseBlock::BaseBlock()
+BaseBlock::BaseBlock(int Pos)
 {
+    this->nPos = Pos;
 }
 
 BaseBlock::~BaseBlock()
 {
 }
 
-void BaseBlock::Print()
+void BaseBlock::print()
 {
-    cout<<"hello world"<<endl;
+    
 }

@@ -6,8 +6,9 @@
 class RectBlock:public BaseBlock
 {
     public:
-        RectBlock();
+        RectBlock(int Pos);
         ~RectBlock();
+        void print();
     protected:
     private:
   

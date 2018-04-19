@@ -1,8 +1,12 @@
 #include <main.h>
-#include <sudu/RectBlock.h>
+#include <sudu_main.h>
 
 int main(int argc,char **argv)
 {
-    RectBlock a;
-    a.Print();
+    sudu_main a;
+    a.init();
+    //a.print();
+    a.setMemberTest();
+    a.print(); 
+    a.work();
 }
