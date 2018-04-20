@@ -99,7 +99,6 @@ void sudu_main::work()
     itor = hor.begin();  
     while(itor!=hor.end())  
     {  
-        (*itor)->print();
         itor++; 
     } 
 } 

@@ -2,18 +2,18 @@
 
 HorizontalBlock::HorizontalBlock(int pos):BaseBlock(pos)
 {
-
+    init();
 }
 
 HorizontalBlock::~HorizontalBlock()
 {
 }
 
-void HorizontalBlock::print()
+void HorizontalBlock::init()
 {
-    for(int i=0;i<9;i++)
+    for(int i=0;i<N;i++)
     {
-        printf("%d ",sudu_main::finalArray[i][nPos]);
+        a[i]=&sudu_main::finalArray[i][nPos];
+        la[i] = &sudu_main::data[i][nPos];
     }
-    printf("\n");
 }

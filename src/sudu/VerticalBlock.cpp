@@ -2,17 +2,18 @@
 
 VerticalBlock::VerticalBlock(int pos):BaseBlock(pos)
 {
+	init();
 }
 
 VerticalBlock::~VerticalBlock()
 {
 }
 
-void VerticalBlock::print()
+void VerticalBlock::init()
 {
-    for(int i=0;i<9;i++)
+   for(int i=0;i<N;i++)
     {
-        printf("%d ",sudu_main::finalArray[nPos][i]);
+        a[i]=&sudu_main::finalArray[nPos][i];
+        la[i] = &sudu_main::data[nPos][i];
     }
-    printf("\n");
 }

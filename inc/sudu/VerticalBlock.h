@@ -1,6 +1,5 @@
 #ifndef SUDU_VERTICALBLOCK_H
 #define SUDU_VERTICALBLOCK_H
-#include <main.h>
 #include "BaseBlock.h"
 
 class VerticalBlock:public BaseBlock
@@ -8,7 +7,7 @@ class VerticalBlock:public BaseBlock
     public:
         VerticalBlock(int pos);
         ~VerticalBlock();
-        void print();
+        void init();
     protected:
     private:
 };

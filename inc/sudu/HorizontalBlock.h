@@ -7,8 +7,8 @@ class HorizontalBlock:public BaseBlock
     public:
         HorizontalBlock(int Pos);
         ~HorizontalBlock();
-        void print();
     protected:
+    	void init();
     private:
 };
 

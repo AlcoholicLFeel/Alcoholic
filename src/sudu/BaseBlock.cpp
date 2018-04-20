@@ -10,7 +10,3 @@ BaseBlock::~BaseBlock()
 {
 }
 
-void BaseBlock::print()
-{
-    
-}

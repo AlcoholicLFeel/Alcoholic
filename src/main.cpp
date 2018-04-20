@@ -7,6 +7,7 @@ int main(int argc,char **argv)
     a.init();
     //a.print();
     a.setMemberTest();
-    a.print(); 
+    //a.print(); 
     a.work();
+    a.print();
 }
