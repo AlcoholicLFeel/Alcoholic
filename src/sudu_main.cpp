@@ -97,8 +97,12 @@ void sudu_main::work()
     }
 
     list<BaseBlock*>::iterator itor;
-    for(int i=0;i<18;i++)
-    {
+    int count=0;
+    int iJudge=0;
+    while(1)
+    {   
+        count++;
+       
         itor = hor.begin();  
         while(itor!=hor.end())  
         {   
@@ -106,6 +110,13 @@ void sudu_main::work()
             itor++; 
         } 
         flush();
+        if(iJudge==getfinishnum()||getfinishnum()==81)
+        {
+            cout<<count<<endl;
+            break;
+        }
+         iJudge = getfinishnum();
+
     }
 } 
 
@@ -121,4 +132,20 @@ void sudu_main::flush()
             }
         }
     }
+}
+
+int sudu_main::getfinishnum()
+{
+    int count = 0;
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+            if(sudu_main::finalArray[i][j]!=0)
+            {
+                count++;
+            }
+        }
+    }
+    return count;
 }
