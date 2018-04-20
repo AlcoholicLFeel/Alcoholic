@@ -16,7 +16,6 @@ void RectBlock::init()
     int ver = nPos%3;
     int current=0;
 
-    cout<<"Pos ="<<nPos<<endl;
     for(int i=0+ver*3;i<=2+ver*3;i++)
     {
     	for(int j=0+row*3;j<=2+row*3;j++)
@@ -25,6 +24,5 @@ void RectBlock::init()
             la[current]=&sudu_main::data[i][j];
             current++;
         }
-        cout<<endl;
     }
 }

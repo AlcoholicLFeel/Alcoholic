@@ -16,6 +16,7 @@ class sudu_main
     protected:
     private:
         void setMember(int i_hor,int i_ver,int i_num);
+        void flush();
 };
 
 

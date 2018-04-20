@@ -8,8 +8,8 @@ class HorizontalBlock:public BaseBlock
         HorizontalBlock(int Pos);
         ~HorizontalBlock();
     protected:
-    	void init();
     private:
+    	void init();
 };
 
 #endif

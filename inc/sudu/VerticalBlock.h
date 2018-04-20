@@ -7,9 +7,9 @@ class VerticalBlock:public BaseBlock
     public:
         VerticalBlock(int pos);
         ~VerticalBlock();
-        void init();
     protected:
     private:
+    	void init();
 };
 
 #endif

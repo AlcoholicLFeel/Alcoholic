@@ -25,7 +25,7 @@ void sudu_main::init()
 
 void sudu_main::print()
 {
-    cout<<"=====================m_data"<<endl;
+    /*cout<<"=====================m_data"<<endl;
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
@@ -33,7 +33,7 @@ void sudu_main::print()
             cout<<sudu_main::data[i][j].size()<<"  ";
         }
         cout<<endl;
-    }
+    }*/
     cout<<"=====================m_finalArry"<<endl;
     for(int i=0;i<N;i++)
     {
@@ -79,6 +79,7 @@ void sudu_main::setMemberTest()
 void sudu_main::setMember(int i_hor,int i_ver,int i_num)
 {
     finalArray[i_hor-1][i_ver-1]=i_num;
+    data[i_hor-1][i_ver-1].clear();
 }
 
 void sudu_main::work()
@@ -88,7 +89,7 @@ void sudu_main::work()
     for(int i=0;i<9;i++)
     {
     	HorizontalBlock* Horizontal = new HorizontalBlock(i);
-        VerticalBlock*    Vertical = new VerticalBlock(i);
+        VerticalBlock*   Vertical = new VerticalBlock(i);
         RectBlock*       Rect = new RectBlock(i); 
         hor.push_front(Horizontal);
         hor.push_front(Vertical);
@@ -96,9 +97,28 @@ void sudu_main::work()
     }
 
     list<BaseBlock*>::iterator itor;
-    itor = hor.begin();  
-    while(itor!=hor.end())  
-    {  
-        itor++; 
-    } 
+    for(int i=0;i<18;i++)
+    {
+        itor = hor.begin();  
+        while(itor!=hor.end())  
+        {   
+            (*itor)->think();
+            itor++; 
+        } 
+        flush();
+    }
 } 
+
+void sudu_main::flush()
+{
+    for(int i=0;i<N;i++)
+    {
+        for(int j=0;j<N;j++)
+        {
+            if(sudu_main::data[i][j].size()==1)
+            {
+                setMember(i+1,j+1,*(data[i][j].begin()));
+            }
+        }
+    }
+}

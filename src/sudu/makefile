@@ -9,3 +9,6 @@ $(objs):%.o:%.cpp
 
 move:
 	mv $(objs) $(obj_dir)
+
+clean:
+	rm -rf $(objs)

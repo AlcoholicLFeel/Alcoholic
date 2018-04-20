@@ -7,10 +7,9 @@ class RectBlock:public BaseBlock
     public:
         RectBlock(int Pos);
         ~RectBlock();
-        void init();
     protected:
     private:
-  
+    	void init();
 };
 
 

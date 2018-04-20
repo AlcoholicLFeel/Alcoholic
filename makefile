@@ -8,15 +8,13 @@ inc=-I$(top_dir)/inc
 export cc obj_dir cflags inc
 
 
-all:checkdir $(sub_dir) $(target)
+all:checkdir call_sub $(target)
 
 checkdir:
 	mkdir -p $(obj_dir)
 
-$(sub_dir):echo
-	make -C $@
-echo:
-	@echo $(sub_dir)
+call_sub:
+	@for n in $(sub_dir);do make -C $$n; done
 
 $(target):
 	$(cc) $(cflags) $(obj_dir)/*.o -o $@
@@ -24,3 +22,4 @@ $(target):
 .PHONY:clean
 clean:
 	rm -rf leaf  $(obj_dir)
+	@for n in $(sub_dir);do make -C $$n clean; done

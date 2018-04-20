@@ -8,13 +8,14 @@ class BaseBlock
         BaseBlock(int Pos);
         ~BaseBlock();
         void addMember(list<int> Member);
+        void think(); 
     protected:
-    	void init();
         int nPos;
         int* a[N];
         list<int>* la[N];
-    private:
         
+    private:
+    	void removeNum(int Num);
 };
 
 
