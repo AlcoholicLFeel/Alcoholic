@@ -9,6 +9,7 @@ class BaseBlock
         ~BaseBlock();
         void addMember(list<int> Member);
         void think(); 
+        bool think2();
     protected:
         int nPos;
         int* a[N];
@@ -16,6 +17,7 @@ class BaseBlock
         
     private:
     	void removeNum(int Num);
+        void ensureNum(int Num);
 };
 
 

@@ -25,15 +25,19 @@ void sudu_main::init()
 
 void sudu_main::print()
 {
-    /*cout<<"=====================m_data"<<endl;
+    cout<<"=====================m_data"<<endl;
     for(int i=0;i<N;i++)
     {
         for(int j=0;j<N;j++)
         {
-            cout<<sudu_main::data[i][j].size()<<"  ";
+            cout<<"\t";
+            for(list<int>::iterator itor=data[i][j].begin();itor!=data[i][j].end();itor++)
+            {
+                cout<<*itor;
+            } 
         }
         cout<<endl;
-    }*/
+    }
     cout<<"=====================m_finalArry"<<endl;
     for(int i=0;i<N;i++)
     {
@@ -47,7 +51,7 @@ void sudu_main::print()
 
 void sudu_main::setMemberTest()
 {
-    setMember(1,1,7);
+    /*setMember(1,1,7);
     setMember(1,2,6);
     setMember(1,5,5);
     setMember(1,8,8);
@@ -73,7 +77,41 @@ void sudu_main::setMemberTest()
     setMember(9,2,2);
     setMember(9,5,9);
     setMember(9,8,3);
-    setMember(9,9,8);
+    setMember(9,9,8);*/
+    /*setMember(1,5,1);
+    setMember(1,8,5);
+    setMember(1,9,4);
+    setMember(2,2,8);
+    setMember(2,3,3);
+    setMember(4,1,7);
+    setMember(4,4,6);
+    setMember(4,7,3);
+    setMember(5,1,4);
+    setMember(5,3,1);
+    setMember(6,6,2);
+    setMember(6,7,9);
+    setMember(7,2,2);
+    setMember(7,7,8);
+    setMember(8,4,4);
+    setMember(8,5,5);
+    setMember(9,4,1);*/
+    setMember(1,1,8);
+    setMember(1,7,6);
+    setMember(1,8,1);
+    setMember(2,4,4);
+    setMember(2,7,5);
+    setMember(4,1,2);
+    setMember(4,5,7);
+    setMember(4,6,1);
+    setMember(5,3,8);
+    setMember(5,7,4);
+    setMember(6,5,2);
+    setMember(7,2,5);
+    setMember(7,8,2);
+    setMember(7,9,7);
+    setMember(8,3,4);
+    setMember(8,4,6);
+    setMember(9,2,3);
 }
 
 void sudu_main::setMember(int i_hor,int i_ver,int i_num)
@@ -110,12 +148,29 @@ void sudu_main::work()
             itor++; 
         } 
         flush();
-        if(iJudge==getfinishnum()||getfinishnum()==81)
+         
+        
+
+        if(iJudge==getfinishnum())
+        {
+            itor = hor.begin(); 
+            while(itor!=hor.end())  
+        {   
+            if((*itor)->think2())
+            {
+                break;
+            }
+            itor++; 
+        } 
+        iJudge=0;
+        flush();
+        }
+        if(getfinishnum()==81)
         {
             cout<<count<<endl;
             break;
         }
-         iJudge = getfinishnum();
+        iJudge = getfinishnum();
 
     }
 } 
@@ -132,6 +187,8 @@ void sudu_main::flush()
             }
         }
     }
+    cout<<"=========================="<<endl;
+    print();
 }
 
 int sudu_main::getfinishnum()
