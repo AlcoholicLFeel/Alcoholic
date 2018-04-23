@@ -39,7 +39,6 @@ void BaseBlock::removeNum(int num)
 
 bool BaseBlock::think2()
 {
-    cout<<"===========block =======  "<<nPos<<endl;
 
     int temp[9]={0};
     for(int i=0;i<9;i++)
@@ -48,24 +47,18 @@ bool BaseBlock::think2()
       {
         for(list<int>::iterator itor=(*la[i]).begin();itor!=(*la[i]).end();itor++)
         {
-          cout<<*itor;
           temp[*itor-1]++;
         }
-        cout<<" ";
       }
     }
     for(int i=0;i<9;i++)
     {
-      cout<<temp[i] <<" ";
       if(temp[i]==1)
       {
-
-        ensureNum(i+1);
-        return true;
+          ensureNum(i+1);
+          return true;
       }
-
     }
-    cout<<"===========block ======================  "<<endl;
     return false;
 }
 

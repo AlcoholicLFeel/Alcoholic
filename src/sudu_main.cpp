@@ -78,7 +78,7 @@ void sudu_main::setMemberTest()
     setMember(9,5,9);
     setMember(9,8,3);
     setMember(9,9,8);*/
-    /*setMember(1,5,1);
+    setMember(1,5,1);
     setMember(1,8,5);
     setMember(1,9,4);
     setMember(2,2,8);
@@ -94,8 +94,8 @@ void sudu_main::setMemberTest()
     setMember(7,7,8);
     setMember(8,4,4);
     setMember(8,5,5);
-    setMember(9,4,1);*/
-    setMember(1,1,8);
+    setMember(9,4,1);
+    /*setMember(1,1,8);
     setMember(1,7,6);
     setMember(1,8,1);
     setMember(2,4,4);
@@ -111,7 +111,7 @@ void sudu_main::setMemberTest()
     setMember(7,9,7);
     setMember(8,3,4);
     setMember(8,4,6);
-    setMember(9,2,3);
+    setMember(9,2,3);*/
 }
 
 void sudu_main::setMember(int i_hor,int i_ver,int i_num)
@@ -155,15 +155,19 @@ void sudu_main::work()
         {
             itor = hor.begin(); 
             while(itor!=hor.end())  
-        {   
-            if((*itor)->think2())
+            {   
+                if((*itor)->think2())
+                {
+                    iJudge=0;
+                    break;
+                }
+                itor++; 
+            }
+            if(iJudge==getfinishnum())
             {
                 break;
             }
-            itor++; 
-        } 
-        iJudge=0;
-        flush();
+            flush();
         }
         if(getfinishnum()==81)
         {
@@ -187,7 +191,6 @@ void sudu_main::flush()
             }
         }
     }
-    cout<<"=========================="<<endl;
     print();
 }
 

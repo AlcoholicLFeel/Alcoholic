@@ -2,13 +2,10 @@ srcs=$(wildcard *.c) $(wildcard *.cpp)
 dir=$(notdir $(srcs))
 objs=$(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(dir)))
 
-all:$(objs) move
+all:$(objs)
 
 $(objs):%.o:%.cpp
 	$(cc) $(inc) $(cflags) -c $^ -o $@
-
-move:
-	mv $(objs) $(obj_dir)
 
 clean:
 	rm -rf $(objs)
