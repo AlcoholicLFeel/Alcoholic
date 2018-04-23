@@ -1,6 +1,7 @@
 #ifndef SUDU_BASEBLOCK_H
 #define SUDU_BASEBLOCK_H
-#include <sudu_main.h>
+#include <main.h>
+#include "Controller.h"
 
 class BaseBlock
 {
@@ -10,6 +11,7 @@ class BaseBlock
         void addMember(list<int> Member);
         void think(); 
         bool think2();
+        virtual bool checkover();
     protected:
         int nPos;
         int* a[N];

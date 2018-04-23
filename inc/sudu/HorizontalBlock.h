@@ -7,6 +7,7 @@ class HorizontalBlock:public BaseBlock
     public:
         HorizontalBlock(int Pos);
         ~HorizontalBlock();
+        bool checkover();
     protected:
     private:
     	void init();

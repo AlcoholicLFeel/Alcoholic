@@ -2,5 +2,7 @@
 
 void logi::log(const char* src)
 {
-     cout<<src<<endl;
+	#if DEBUG
+    cout<<src<<endl;
+    #endif
 }

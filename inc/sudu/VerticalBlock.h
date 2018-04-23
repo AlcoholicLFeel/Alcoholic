@@ -7,6 +7,7 @@ class VerticalBlock:public BaseBlock
     public:
         VerticalBlock(int pos);
         ~VerticalBlock();
+        virtual bool checkover();
     protected:
     private:
     	void init();

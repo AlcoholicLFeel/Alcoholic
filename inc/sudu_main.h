@@ -1,8 +1,14 @@
 #ifndef SUDU_MAIN_H
 #define SUDU_MAIN_H
 #include "main.h"
-#include <list>
-#define N 9
+
+#include <sudu/BaseBlock.h>
+#include <sudu/RectBlock.h>
+#include <sudu/VerticalBlock.h>
+#include <sudu/HorizontalBlock.h>
+#include <sudu/Controller.h>
+#include <log/logi.h>
+
 
 class sudu_main
 {
@@ -11,13 +17,12 @@ class sudu_main
         void print();
         void setMemberTest();
         void work();
-        static list<int> data[N][N];
-        static int finalArray[N][N];
     protected:
     private:
         void setMember(int i_hor,int i_ver,int i_num);
         void flush();
         int getfinishnum();
+        bool checkover(list<BaseBlock*>);
 };
 
 

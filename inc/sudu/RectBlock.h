@@ -7,9 +7,12 @@ class RectBlock:public BaseBlock
     public:
         RectBlock(int Pos);
         ~RectBlock();
+        virtual bool checkover();
     protected:
     private:
     	void init();
+    	int row;
+    	int ver;
 };
 
 

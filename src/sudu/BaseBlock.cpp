@@ -10,6 +10,11 @@ BaseBlock::~BaseBlock()
 {
 }
 
+bool BaseBlock::checkover()
+{
+	return false;
+}
+
 void BaseBlock::think()
 {
     for(int i=0;i<9;i++)
