@@ -42,7 +42,7 @@ void BaseBlock::removeNum(int num)
     }
 }
 
-bool BaseBlock::think2()
+bool BaseBlock::think1()
 {
 
     int temp[9]={0};

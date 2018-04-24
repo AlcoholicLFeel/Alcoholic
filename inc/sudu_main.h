@@ -17,12 +17,22 @@ class sudu_main
         void print();
         void setMemberTest();
         void work();
+        static int finalArray[N][N];
+        static list<int> data[N][N];
     protected:
     private:
         void setMember(int i_hor,int i_ver,int i_num);
         void flush();
         int getfinishnum();
         bool checkover(list<BaseBlock*>);
+        list<BaseBlock*> init_vector();
+        void dothink(list<BaseBlock*>);
+        int dothink1(list<BaseBlock*>,int i);
+        bool dowork(list<BaseBlock*>);
+        bool doenum(list<BaseBlock*>);
+        void sudu_backup();
+        void sudu_reduction();
+        int count =0;
 };
 
 

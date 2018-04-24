@@ -10,7 +10,7 @@ class BaseBlock
         ~BaseBlock();
         void addMember(list<int> Member);
         void think(); 
-        bool think2();
+        bool think1();
         virtual bool checkover();
     protected:
         int nPos;

@@ -5,10 +5,8 @@ list<int> Controller::data[N][N];
 
 Controller::Controller()
 {
-
 }
 
 Controller::~Controller()
 {
-	
 }
